@@ -1,0 +1,11 @@
+img {
+    
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .product-row{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
