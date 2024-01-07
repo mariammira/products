@@ -13,6 +13,8 @@ import { Store } from '@ngrx/store';
 export class ProductsListComponent {
 
  productsList :IProduct[]=[]
+ p: number = 1;
+ total:number=0
 
 constructor(private productService:ProductsService,
             private router:Router,
@@ -23,7 +25,7 @@ constructor(private productService:ProductsService,
     let api
     if(data.search.searchKey) api=this.productService.searchProducts(data.search.searchKey)
     else if (data.search.category) api=this.productService.getProductsByCategory(data.search.category)
-    else api =this.productService.getProducts(30,0,'id,title,price,thumbnail,rating')
+    else api =this.productService.getProducts(30,(this.p-1)*30,'id,title,price,thumbnail,rating')
      
     this.getProductsList(api);
   })
@@ -37,8 +39,14 @@ selectProduct(product:IProduct){
 getProductsList(url:any){
   
   url.subscribe((ProductsListObject:any)=>{
-    this.productsList=ProductsListObject.products
+    this.productsList=ProductsListObject.products;
+    this.total=ProductsListObject.total
   });
+}
+
+changePage(event:number){
+  this.p = event;
+  this.getProductsList(this.productService.getProducts(30,(this.p-1)*30,'id,title,price,thumbnail,rating'))
 }
 
 }

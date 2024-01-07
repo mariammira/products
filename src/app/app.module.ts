@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { SearchReducer } from './store/reducers/search.reducer';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
