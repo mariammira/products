@@ -1,0 +1,8 @@
+<div class="container" *ngIf="cartItems">
+    <div class="card" *ngFor="let item of cartItems">
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+        <p>{{item.price}}</p>
+
+    </div>
+</div>

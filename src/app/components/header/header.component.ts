@@ -7,10 +7,12 @@ import { Store } from '@ngrx/store';
 })
 export class HeaderComponent {
     searchBy:string=''
+    cartItems:number=0
     constructor(
       private store:Store<any>){
         this.store.subscribe(data=> {
           if(!data.search.searchKey)this.searchBy=''
+          if(data.CartReducer) this.cartItems=data.CartReducer.length
         })
 }
     changeFilterBy(target:any){

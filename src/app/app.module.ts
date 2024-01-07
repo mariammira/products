@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { SearchReducer } from './store/reducers/search.reducer';
+import {CartReducer} from './store/reducers/cart.reducer'
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     ProductsListComponent,
     ProductEditComponent,
     HeaderComponent,
-    SideBarComponent
+    SideBarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot({
-      search: SearchReducer,
+      search: SearchReducer,CartReducer
     })
   ],
   providers: [],
