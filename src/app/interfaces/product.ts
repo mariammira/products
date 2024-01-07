@@ -4,6 +4,8 @@ export interface IProduct {
   price:number
   rating:number
   thumbnail:string
+  images?:string[]
+  description?:string
 
 }
 

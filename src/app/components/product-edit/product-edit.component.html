@@ -1,6 +1,30 @@
 <div *ngIf="product">
+ <div class="row">
+    <div class="col-md-5" style="height: 200px;">
+        <img *ngFor="let image of product.images" [src]="image">
 
-    {{product.id}}
-    {{product.title}}
-    {{product.price}}
+    </div>
+    <div class="col-md-5">
+        <h6>{{product.title}}</h6>
+        <div>{{product.description}}</div>
+        <div>{{product.price}}</div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+
+ </div>
+
+ <div class="row">
+    <h6>Overview</h6>
+    This is a dummy Overview as there is no overvew at the api 
+ </div>
+ <div class="row">
+    <h6>highlights</h6>
+    This is a dummy highlights as there is no highlights at the api 
+
+ </div>
+
+
+    
 </div>
