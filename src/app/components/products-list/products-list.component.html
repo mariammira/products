@@ -1,21 +1,29 @@
  
+<div class="row">
+    <div class="col-md-2" style="background-color:#F9FAFB ;">
+        <app-side-bar></app-side-bar>
+    </div>
 
- <div class="row d-flex justify-content-center">
-    <div class=" col-md-4 product-row" 
-        *ngFor="let product of productsList| paginate: { itemsPerPage: 30, currentPage: p ,totalItems:total}" >
-        
-        <div  class="card">
-            <img  (click)="selectProduct(product)" [src]="product.thumbnail">
-           
+
+    <div class="col-md-10">
+        <div class="row d-flex justify-content-center">
+            <div class=" col-md-4 product-row" 
+                *ngFor="let product of productsList| paginate: { itemsPerPage: 30, currentPage: p ,totalItems:total}" >
+                
+                <div  class="card">
+                    <img  (click)="selectProduct(product)" [src]="product.thumbnail">
+                
+                </div>
+                
+                <div class="card" style="padding: 5px;">
+                        <p>  {{product.title}} </p>         
+                        <p>${{product.price}}</p>
+                                
+                </div>   
+                
+            </div>  
+            <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
         </div>
-        
-        <div class="card" style="padding: 5px;">
-                <p>  {{product.title}} </p>         
-                <p> {{product.price}}</p>
-                        
-            </div>   
-        
-    </div>  
-    <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
+    </div>
 </div>
    

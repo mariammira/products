@@ -1,30 +1,64 @@
-<div *ngIf="product">
- <div class="row">
-    <div class="col-md-5" style="height: 200px;">
-        <img *ngFor="let image of product.images" [src]="image">
+<div class="row d-flex justify-content-center" *ngIf="product">
+   <div class="col-md-11">
+      <div class="row">
+         <div class="col-md-5" style="height: 400px;">
+            <div class="card">
+               <div class="row">
+                  <div class="col-md-3">
+                     <img style="height: 100px;" *ngFor="let image of product.images"
+                          (click)="slectedImg=image" [src]="image">
+                  </div>  
+                  <div class="col-md-9">
+                     <img style="height: 100%;width: 100%;"  [src]="slectedImg">
+                  </div> 
+               </div>
+            </div>
+         </div>
+         <div class="col-md-5">
+            <div class="card">
+               <h6>{{product.title}}</h6>
+               <div>{{product.description}}</div>
+               <div>{{product.price}}</div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="card">
+               <button class="btn bg-btn">Add To Cart</button>
+            </div>
+         </div>
 
-    </div>
-    <div class="col-md-5">
-        <h6>{{product.title}}</h6>
-        <div>{{product.description}}</div>
-        <div>{{product.price}}</div>
-    </div>
-    <div class="col-md-2">
+      </div>
 
-    </div>
+      <div class="row">
+         <h6>Overview</h6>
+         <p>This is a dummy Overview as there is no overvew at the api</p>
+         <p>Honor Watch Band 7 is a stylish and versatile fitness tracker that is perfect for people of all activity levels.
+            It features a large 1.47-inch AMOLED display with a 2.5D curved glass design, 
+            making it easy to view your fitness data even in bright sunlight.
+            This product supports low blood oxygen notification with vibration and real-time physical status monitoring.
+               Honor Band 7 supports 24-hour automatic heart rate monitoring, 
+               sending proactive alerts as soon as it detects your resting heart rate is too high or too low.
+               It can connect to all smartphone models. Special functions are available to use according to your lifestyle.
+               It has 96 exercise modes, health functions,
+                  connect notifications to your smartphone, control music through the watch and more. 
+                  Comes in black meteorite color.</p>
+      </div>
+      <div class="row">
+         <h6>highlights</h6>
+         <p>This is a dummy highlights as there is no highlights at the api </p>
+         <p>Honor Watch Band 7 is a stylish and versatile fitness tracker that is perfect for people of all activity levels.
+            It features a large 1.47-inch AMOLED display with a 2.5D curved glass design, 
+            making it easy to view your fitness data even in bright sunlight.
+            This product supports low blood oxygen notification with vibration and real-time physical status monitoring.
+            Honor Band 7 supports 24-hour automatic heart rate monitoring, 
+            sending proactive alerts as soon as it detects your resting heart rate is too high or too low.
+               It can connect to all smartphone models. Special functions are available to use according to your lifestyle.
+               It has 96 exercise modes, health functions,
+               connect notifications to your smartphone, control music through the watch and more. 
+               Comes in black meteorite color.</p>
 
- </div>
+      </div>
 
- <div class="row">
-    <h6>Overview</h6>
-    This is a dummy Overview as there is no overvew at the api 
- </div>
- <div class="row">
-    <h6>highlights</h6>
-    This is a dummy highlights as there is no highlights at the api 
-
- </div>
-
-
+   </div>
     
 </div>

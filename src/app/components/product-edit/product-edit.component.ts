@@ -9,14 +9,16 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent {
-  product :IProduct|null=null
+  product :IProduct|null=null;
+  slectedImg:string=''
 
   constructor(private productService:ProductsService,private router:ActivatedRoute){
   }
   ngOnInit(){
     this.router.params.subscribe((params: Params): void => {
       this.productService.getProductByID(params['id']).subscribe((product)=>{
-        this.product=product as IProduct
+        this.product=product as IProduct;
+        if(this.product.images&&this.product.images.length>0) this.slectedImg = this.product.images[0]
       });
     })
   }
